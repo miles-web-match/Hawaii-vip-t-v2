@@ -276,46 +276,29 @@ export default function App() {
         <div className="scroll-down" aria-hidden="true" />
       </section>
 
-      {/* ===== About ===== */}
-      <div className="w-full" style={{ background: charcoal }}>
-        <section id="about" className="mx-auto max-w-6xl px-4 py-20 fade-in-section">
-          {/* 見出し・リードは中央 */}
-          <h2 className="font-serif text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
-            {t('about_title')}
-          </h2>
-          <div className="w-14 h-0.5 mx-auto mb-6" style={{ background: gold }} />
-          <p
-  className="mb-10 text-center mx-auto text-[15px] sm:text-base leading-8"
-  style={{
-    // 幅を少し狭くして折り返しを綺麗に
-    maxWidth: '34rem',
-    color: '#e6e4df',
+    {/* ===== About ===== */}
+<div className="w-full" style={{ background: charcoal }}>
+  <section id="about" className="mx-auto max-w-6xl px-4 py-20 fade-in-section">
+    {/* 見出し・区切り線（中央） */}
+    <h2 className="font-serif text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
+      {t('about_title')}
+    </h2>
+    <div className="w-14 h-0.5 mx-auto mb-6" style={{ background: gold }} />
 
-    // 日本語の行頭禁則（「、」「。」が行頭に来ないように）
-    lineBreak: 'strict' as any,
+    {/* リード文：Tailwindのみで整形（崩れ対策） */}
+    <p className="mb-10 mx-auto max-w-[34rem] text-center text-[15px] sm:text-base leading-8 text-[#e6e4df] break-keep">
+      {t('about_desc')}
+    </p>
 
-    // 対応ブラウザでは見出し風にバランス良く折り返し
-    textWrap: 'balance' as any,
+    {/* 本文：幅を絞って読みやすく */}
+    <div className="space-y-5 text-[15px] md:text-base leading-8 max-w-3xl mx-auto text-left">
+      {t('about_desc_long')
+        .split(/\n{2,}/)
+        .map((p, i) => <p key={i}>{p.trim()}</p>)}
+    </div>
+  </section>
+</div>
 
-    // 句読点が前の行にぶら下がるのを許容（対応ブラウザのみ）
-    hangingPunctuation: 'allow-end' as any,
-
-    // ほんの少し締まって見えるように
-    letterSpacing: '0.005em',
-  }}
->
-  {t('about_desc')}
-</p>
-
-
-          {/* 本文は左揃え＋行幅を絞る */}
-          <div className="space-y-5 text-[15px] md:text-base leading-8 max-w-3xl mx-auto text-left">
-            {t('about_desc_long')
-              .split(/\n{2,}/)
-              .map((p, i) => <p key={i}>{p.trim()}</p>)}
-          </div>
-        </section>
-      </div>
 
       {/* ===== Founder Greeting ===== */}
       <div className="w-full" style={{ background: graphite }}>
