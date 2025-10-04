@@ -284,9 +284,29 @@ export default function App() {
             {t('about_title')}
           </h2>
           <div className="w-14 h-0.5 mx-auto mb-6" style={{ background: gold }} />
-          <p className="opacity-90 mb-8 text-center max-w-2xl mx-auto">
-            {t('about_desc')}
-          </p>
+          <p
+  className="mb-10 text-center mx-auto text-[15px] sm:text-base leading-8"
+  style={{
+    // 幅を少し狭くして折り返しを綺麗に
+    maxWidth: '34rem',
+    color: '#e6e4df',
+
+    // 日本語の行頭禁則（「、」「。」が行頭に来ないように）
+    lineBreak: 'strict' as any,
+
+    // 対応ブラウザでは見出し風にバランス良く折り返し
+    textWrap: 'balance' as any,
+
+    // 句読点が前の行にぶら下がるのを許容（対応ブラウザのみ）
+    hangingPunctuation: 'allow-end' as any,
+
+    // ほんの少し締まって見えるように
+    letterSpacing: '0.005em',
+  }}
+>
+  {t('about_desc')}
+</p>
+
 
           {/* 本文は左揃え＋行幅を絞る */}
           <div className="space-y-5 text-[15px] md:text-base leading-8 max-w-3xl mx-auto text-left">
