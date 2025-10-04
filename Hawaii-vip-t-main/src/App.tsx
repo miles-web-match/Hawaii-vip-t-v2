@@ -99,8 +99,8 @@ const ja: Record<Keys, string> = {
   brand: 'コクアロハ',
 
   // Hero（★ご指定の日本語コピー）
-  hero_title_line1: 'ハワイで出会う、',
-  hero_title_line2: '新しい自分と忘れていた日本の素晴らしさ。',
+  hero_title_line1: 'ハワイで出会う新しい自分、',
+  hero_title_line2: '忘れていた日本の素晴らしさ。',
 
   about_title: '私たちについて',
   about_desc:
