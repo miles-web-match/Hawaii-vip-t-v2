@@ -263,9 +263,9 @@ export default function App() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.75) 100%)' }} />
         {/* 内容 */}
         <div className="relative z-10 h-full max-w-5xl mx-auto px-4 flex flex-col items-center justify-center text-center">
-          <p className="uppercase tracking-[0.35em] text-xs md:text-sm mb-4" style={{ color: gold }}>
-            WELCOME TO
-          </p>
+          <p className="hidden uppercase tracking-[0.35em] text-xs md:text-sm mb-4" style={{ color: gold }}>
+  WELCOME TO
+</p>
           <h1
             className="hero-text-animation font-serif drop-shadow text-4xl sm:text-5xl md:text-7xl leading-[1.2] md:leading-[1.15] text-center"
             style={{ color: '#fff', maxWidth: heroMaxWidth, margin: '0 auto', wordBreak: 'keep-all' as any }}
