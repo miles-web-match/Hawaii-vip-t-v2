@@ -193,6 +193,7 @@ export default function App() {
     return () => ioRef.current?.disconnect();
   }, []);
 
+  // theme
   const gold = '#D4AF37';
   const onyx = '#0B0B0C';
   const charcoal = '#101112';
@@ -203,7 +204,10 @@ export default function App() {
   return (
     <div className="min-h-screen">
       {/* ===== Header ===== */}
-      <header className="sticky top-0 z-40 border-b" style={{ background: 'rgba(0,0,0,.6)', backdropFilter: 'blur(6px)', borderColor: 'rgba(212,175,55,.15)' }}>
+      <header
+        className="sticky top-0 z-40 border-b"
+        style={{ background: 'rgba(0,0,0,.6)', backdropFilter: 'blur(6px)', borderColor: 'rgba(212,175,55,.15)' }}
+      >
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <div className="font-serif text-xl" style={{ color: gold }}>{t('brand')}</div>
 
@@ -275,11 +279,17 @@ export default function App() {
       {/* ===== About ===== */}
       <div className="w-full" style={{ background: charcoal }}>
         <section id="about" className="mx-auto max-w-6xl px-4 py-20 fade-in-section">
-          <h2 className="font-serif text-3xl md:text-4xl mb-2" style={{ color: '#fff' }}>{t('about_title')}</h2>
-          <div className="w-14 h-0.5 mb-6" style={{ background: gold }} />
-          <p className="opacity-90 mb-8">{t('about_desc')}</p>
+          {/* 見出し・リードは中央 */}
+          <h2 className="font-serif text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
+            {t('about_title')}
+          </h2>
+          <div className="w-14 h-0.5 mx-auto mb-6" style={{ background: gold }} />
+          <p className="opacity-90 mb-8 text-center max-w-2xl mx-auto">
+            {t('about_desc')}
+          </p>
 
-          <div className="space-y-5 text-[15px] md:text-base leading-8">
+          {/* 本文は左揃え＋行幅を絞る */}
+          <div className="space-y-5 text-[15px] md:text-base leading-8 max-w-3xl mx-auto text-left">
             {t('about_desc_long')
               .split(/\n{2,}/)
               .map((p, i) => <p key={i}>{p.trim()}</p>)}
@@ -290,11 +300,13 @@ export default function App() {
       {/* ===== Founder Greeting ===== */}
       <div className="w-full" style={{ background: graphite }}>
         <section id="greeting" className="mx-auto max-w-6xl px-4 py-20 fade-in-section">
-          <h2 className="font-serif text-3xl md:text-4xl mb-2" style={{ color: '#fff' }}>{t('greeting_title')}</h2>
-          <div className="w-14 h-0.5 mb-8" style={{ background: gold }} />
+          <h2 className="font-serif text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
+            {t('greeting_title')}
+          </h2>
+          <div className="w-14 h-0.5 mx-auto mb-8" style={{ background: gold }} />
 
           <div className="grid md:grid-cols-[1.15fr_1fr] gap-10 items-end">
-            {/* 本文 */}
+            {/* 本文（左揃え） */}
             <div>
               <p className="text-sm opacity-80 mb-3" style={{ color: gold }}>{t('greeting_name')}</p>
               <div className="space-y-5 text-[15px] md:text-base leading-8">
@@ -305,7 +317,7 @@ export default function App() {
             </div>
 
             {/* 写真（角丸なし・フチをゴールド系） */}
-            <figure className="shadow-lg" style={{ border: `1px solid ${borderGold}` }}>
+            <figure className="shadow-lg self-end" style={{ border: `1px solid ${borderGold}` }}>
               <img
                 src="/about-side.jpg?v=2"
                 alt=""
@@ -321,9 +333,11 @@ export default function App() {
       {/* ===== Service ===== */}
       <div className="w-full" style={{ background: charcoal }}>
         <section id="service" className="mx-auto max-w-6xl px-4 py-20 fade-in-section">
-          <h2 className="font-serif text-3xl md:text-4xl mb-2" style={{ color: '#fff' }}>{t('service_title')}</h2>
-          <div className="w-14 h-0.5 mb-6" style={{ background: gold }} />
-          <p className="text-sm opacity-90 mb-8">{t('service_subtitle')}</p>
+          <h2 className="font-serif text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
+            {t('service_title')}
+          </h2>
+          <div className="w-14 h-0.5 mx-auto mb-6" style={{ background: gold }} />
+          <p className="text-sm opacity-90 mb-8 text-center">{t('service_subtitle')}</p>
 
           <div className="grid md:grid-cols-3 gap-6">
             {([
@@ -343,25 +357,27 @@ export default function App() {
                 }}
               >
                 <h3 className="font-serif text-xl mb-2" style={{ color: '#fff' }}>
-                  {t(ti)}
+                  {t(ti as Keys)}
                 </h3>
-                <p className="text-sm leading-6 opacity-90">{t(de)}</p>
+                <p className="text-sm leading-6 opacity-90">{t(de as Keys)}</p>
               </article>
             ))}
           </div>
 
-          <p className="text-sm opacity-90 mt-6">{t('service_note_more')}</p>
+          <p className="text-sm opacity-90 mt-6 text-center">{t('service_note_more')}</p>
         </section>
       </div>
 
       {/* ===== Company ===== */}
       <div className="w-full" style={{ background: graphite }}>
         <section id="company" className="mx-auto max-w-6xl px-4 py-20 fade-in-section">
-          <h2 className="font-serif text-3xl md:text-4xl mb-2" style={{ color: '#fff' }}>{t('company_title')}</h2>
-          <div className="w-14 h-0.5 mb-6" style={{ background: gold }} />
-          <div className="rounded-xl p-6 border" style={{ background: cardBg, borderColor: 'rgba(212,175,55,.18)' }}>
-            <p className="font-serif text-xl mb-2" style={{ color: '#fff' }}>{t('company_name')}</p>
-            <p className="leading-7 opacity-90">{t('company_desc')}</p>
+          <h2 className="font-serif text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
+            {t('company_title')}
+          </h2>
+          <div className="w-14 h-0.5 mx-auto mb-6" style={{ background: gold }} />
+          <div className="rounded-xl p-6 border max-w-3xl mx-auto" style={{ background: cardBg, borderColor: 'rgba(212,175,55,.18)' }}>
+            <p className="font-serif text-xl mb-2 text-center" style={{ color: '#fff' }}>{t('company_name')}</p>
+            <p className="leading-7 opacity-90 text-left">{t('company_desc')}</p>
           </div>
         </section>
       </div>
@@ -369,12 +385,14 @@ export default function App() {
       {/* ===== Contact ===== */}
       <div className="w-full" style={{ background: charcoal }}>
         <section id="contact" className="mx-auto max-w-6xl px-4 py-20 fade-in-section">
-          <h2 className="font-serif text-3xl md:text-4xl mb-2" style={{ color: '#fff' }}>{t('contact_title')}</h2>
-          <div className="w-14 h-0.5 mb-6" style={{ background: gold }} />
-          <p className="text-sm opacity-90 mb-8">{t('contact_subtitle')}</p>
+          <h2 className="font-serif text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
+            {t('contact_title')}
+          </h2>
+          <div className="w-14 h-0.5 mx-auto mb-6" style={{ background: gold }} />
+          <p className="text-sm opacity-90 mb-8 text-center">{t('contact_subtitle')}</p>
 
           <form
-            className="grid gap-4 md:grid-cols-2"
+            className="grid gap-4 md:grid-cols-2 max-w-3xl mx-auto"
             onSubmit={(e) => {
               e.preventDefault();
               alert('Thanks! (temporary)');
@@ -402,7 +420,7 @@ export default function App() {
             </div>
             <div className="md:col-span-2">
               <button
-                className="rounded-xl px-5 py-3 font-semibold"
+                className="rounded-xl px-5 py-3 font-semibold w-full md:w-auto"
                 style={{ background: gold, color: onyx }}
               >
                 {t('contact_send')}
