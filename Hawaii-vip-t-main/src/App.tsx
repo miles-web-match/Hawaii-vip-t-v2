@@ -16,9 +16,9 @@ const en = {
   // Brand
   brand: 'Kokualoha',
 
-  // Hero
-  hero_title_line1: 'The Ultimate Hawaii Experience,',
-  hero_title_line2: 'Exclusively for You.',
+  // Hero（★ご指定の英語コピー）
+  hero_title_line1: 'In Hawaii, meet a new you,',
+  hero_title_line2: 'and rediscover Japan’s timeless beauty.',
 
   // About (short + long)
   about_title: 'ABOUT US',
@@ -98,8 +98,9 @@ const ja: Record<Keys, string> = {
 
   brand: 'コクアロハ',
 
-  hero_title_line1: '究極のハワイ体験を、',
-  hero_title_line2: 'あなただけに。',
+  // Hero（★ご指定の日本語コピー）
+  hero_title_line1: 'ハワイで出会う、',
+  hero_title_line2: '新しい自分と忘れていた日本の素晴らしさ。',
 
   about_title: '私たちについて',
   about_desc:
@@ -201,6 +202,9 @@ export default function App() {
   const cardBg = '#17181a';
   const borderGold = 'rgba(212,175,55,.28)';
 
+  // 英語の方が単語が長いので、見出し幅を少し広く
+  const heroMaxWidth = lang === 'en' ? '24ch' : '20ch';
+
   return (
     <div className="min-h-screen">
       {/* ===== Header ===== */}
@@ -262,7 +266,10 @@ export default function App() {
           <p className="uppercase tracking-[0.35em] text-xs md:text-sm mb-4" style={{ color: gold }}>
             WELCOME TO
           </p>
-          <h1 className="hero-text-animation font-serif drop-shadow leading-tight text-4xl sm:text-5xl md:text-7xl" style={{ color: '#fff' }}>
+          <h1
+            className="hero-text-animation font-serif drop-shadow text-4xl sm:text-5xl md:text-7xl leading-[1.2] md:leading-[1.15] text-center"
+            style={{ color: '#fff', maxWidth: heroMaxWidth, margin: '0 auto', wordBreak: 'keep-all' as any }}
+          >
             {t('hero_title_line1')}<br />{t('hero_title_line2')}
           </h1>
           <a
@@ -276,29 +283,28 @@ export default function App() {
         <div className="scroll-down" aria-hidden="true" />
       </section>
 
-    {/* ===== About ===== */}
-<div className="w-full" style={{ background: charcoal }}>
-  <section id="about" className="mx-auto max-w-6xl px-4 py-20 fade-in-section">
-    {/* 見出し・区切り線（中央） */}
-    <h2 className="font-serif text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
-      {t('about_title')}
-    </h2>
-    <div className="w-14 h-0.5 mx-auto mb-6" style={{ background: gold }} />
+      {/* ===== About ===== */}
+      <div className="w-full" style={{ background: charcoal }}>
+        <section id="about" className="mx-auto max-w-6xl px-4 py-20 fade-in-section">
+          {/* 見出し・区切り線（中央） */}
+          <h2 className="font-serif text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
+            {t('about_title')}
+          </h2>
+          <div className="w-14 h-0.5 mx-auto mb-6" style={{ background: gold }} />
 
-    {/* リード文：Tailwindのみで整形（崩れ対策） */}
-    <p className="mb-10 mx-auto max-w-[34rem] text-center text-[15px] sm:text-base leading-8 text-[#e6e4df] break-keep">
-      {t('about_desc')}
-    </p>
+          {/* リード文 */}
+          <p className="mb-10 mx-auto max-w-[34rem] text-center text-[15px] sm:text-base leading-8 text-[#e6e4df] break-keep">
+            {t('about_desc')}
+          </p>
 
-    {/* 本文：幅を絞って読みやすく */}
-    <div className="space-y-5 text-[15px] md:text-base leading-8 max-w-3xl mx-auto text-left">
-      {t('about_desc_long')
-        .split(/\n{2,}/)
-        .map((p, i) => <p key={i}>{p.trim()}</p>)}
-    </div>
-  </section>
-</div>
-
+          {/* 本文 */}
+          <div className="space-y-5 text-[15px] md:text-base leading-8 max-w-3xl mx-auto text-left">
+            {t('about_desc_long')
+              .split(/\n{2,}/)
+              .map((p, i) => <p key={i}>{p.trim()}</p>)}
+          </div>
+        </section>
+      </div>
 
       {/* ===== Founder Greeting ===== */}
       <div className="w-full" style={{ background: graphite }}>
@@ -391,7 +397,7 @@ export default function App() {
           <h2 className="font-serif text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
             {t('contact_title')}
           </h2>
-          <div className="w-14 h-0.5 mx-auto mb-6" style={{ background: gold }} />
+        <div className="w-14 h-0.5 mx-auto mb-6" style={{ background: gold }} />
           <p className="text-sm opacity-90 mb-8 text-center">{t('contact_subtitle')}</p>
 
           <form
