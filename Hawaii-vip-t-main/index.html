@@ -43,6 +43,14 @@
       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 
       html { scroll-behavior: smooth; }
+
+      /* ===== 追加: 安全領域とアンカー余白 ===== */
+      :root {
+        --safe-top: env(safe-area-inset-top);
+        /* ヘッダー分の余白（#about などへ飛ぶ時の食い込み防止） */
+        scroll-padding-top: 72px;
+      }
+
       body {
         background-color: #0b0b0c; /* 背景を黒系に */
         font-family: 'Noto Sans JP', sans-serif;
@@ -50,7 +58,10 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         min-height: 100dvh;
+        /* ===== 追加: iOS の自動文字拡大を抑止 ===== */
+        -webkit-text-size-adjust: 100%;
       }
+
       .font-serif { font-family: 'Playfair Display', serif; }
 
       /* ふわっと登場 */
@@ -62,9 +73,28 @@
       .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
 
       /* スクロールインジケーター */
-      .scroll-down { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); width: 24px; height: 40px; border: 2px solid rgba(212,175,55,.9); border-radius: 20px; }
-      .scroll-down::before { content: ''; position: absolute; top: 8px; left: 50%; width: 4px; height: 8px; background: rgba(212,175,55,.9); border-radius: 2px; animation: scroll-anim 2s infinite; }
+      .scroll-down {
+        position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+        width: 24px; height: 40px; border: 2px solid rgba(212,175,55,.9); border-radius: 20px;
+      }
+      .scroll-down::before {
+        content: ''; position: absolute; top: 8px; left: 50%;
+        width: 4px; height: 8px; background: rgba(212,175,55,.9); border-radius: 2px; animation: scroll-anim 2s infinite;
+      }
       @keyframes scroll-anim { 0% { transform: translate(-50%,0); opacity: 0; } 40% { opacity: 1; } 80% { transform: translate(-50%,12px); opacity: 0; } 100% { opacity: 0; } }
+
+      /* ===== 追加: 100vh バグ回避（対応環境は 100svh） ===== */
+      .hero-full { height: 100vh; }
+      @supports (height: 100svh) {
+        .hero-full { height: 100svh; }
+      }
+
+      /* ===== 追加: 日本語リード文の体裁用ユーティリティ ===== */
+      .jp-lead {
+        line-break: strict;
+        hanging-punctuation: allow-end;
+        letter-spacing: .005em;
+      }
     </style>
   </head>
 
