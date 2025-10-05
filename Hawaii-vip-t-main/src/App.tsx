@@ -123,7 +123,6 @@ const ja: Record<Keys, string> = {
 
 私たちの代表的なツアーのひとつに「真珠湾ヒストリカルツアー」があります。日系人の努力や犠牲の歴史を大切に伝え、なぜハワイが日本人にとって特別な場所であり続けるのかを、お客様と分かち合うことを使命としています。観光だけで終わらない“心に残る体験”をお届けすることこそ、私たちの誇りです。`,
 
-  // Service
   service_title: 'サービス',
   service_subtitle: '提供メニュー',
   service_note_more:
@@ -147,13 +146,11 @@ const ja: Record<Keys, string> = {
   svc6_desc:
     '通信/水道/電気の開設、州の証明書、運転免許・SSN 取得の支援。',
 
-  // Company
   company_title: '会社情報',
   company_name: 'コクアロハ',
   company_desc:
     '居住者・投資家・旅行者のための現地密着コンシェルジュ／コーディネーション。',
 
-  // Contact
   contact_title: 'お問い合わせ',
   contact_subtitle: '理想の滞在やお困りごとをお聞かせください',
   contact_name: 'お名前',
@@ -162,7 +159,6 @@ const ja: Record<Keys, string> = {
   contact_message: 'お問い合わせ内容',
   contact_send: '送信',
 
-  // Footer
   footer_rights: 'All Rights Reserved.',
   footer_copyright: '© コクアロハ',
 };
@@ -206,8 +202,8 @@ export default function App() {
   const cardBg = '#17181a';
   const borderGold = 'rgba(212,175,55,.28)';
 
-  // 英語は単語が長いので見出し幅を少し広く
-  const heroMaxWidth = lang === 'en' ? '24ch' : '20ch';
+  // ヒーロー見出しの最大幅（言語別）— 画面幅 92% を上限に
+  const heroMax = lang === 'en' ? 'min(92vw, 42rem)' : 'min(92vw, 36rem)';
 
   return (
     <div className="min-h-screen">
@@ -256,8 +252,8 @@ export default function App() {
 
       {/* ===== Hero ===== */}
       <section
-        className="relative h-screen w-full overflow-hidden"
-        style={{ background: onyx, height: '100svh' }} /* 100svh優先＋h-screenが100vhフォールバック */
+        className="relative w-full overflow-hidden"
+        style={{ background: onyx, height: '100svh' }}  /* iOS 安全な 100vh */
       >
         <img
           src="/hero.jpg"
@@ -273,18 +269,14 @@ export default function App() {
         />
         {/* 内容 */}
         <div className="relative z-10 h-full max-w-5xl mx-auto px-4 flex flex-col items-center justify-center text-center">
-          {/* WELCOME TO は完全に非表示（要らなければ要素ごと削除） */}
-          {/* <p className="uppercase tracking-[0.35em] text-xs md:text-sm mb-4" style={{ color: gold }}>WELCOME TO</p> */}
-
           <h1
-            className="hero-text-animation font-serif drop-shadow text-center"
+            className="hero-text-animation font-serif drop-shadow text-center px-2"
             style={{
               color: '#fff',
-              fontSize: 'clamp(28px, 8.5vw, 68px)',
-              lineHeight: 1.15,
-              maxWidth: heroMaxWidth,
+              fontSize: 'clamp(22px, 7.2vw, 56px)',  // スマホで暴れない可変サイズ
+              lineHeight: 1.18,
+              maxWidth: heroMax,                     // 画面幅の 92% 以内
               margin: '0 auto',
-              wordBreak: 'keep-all' as any,
             }}
           >
             {t('hero_title_line1')}<br />{t('hero_title_line2')}
@@ -308,25 +300,14 @@ export default function App() {
             {t('about_title')}
           </h2>
           <div className="w-14 h-0.5 mx-auto mb-6" style={{ background: gold }} />
-
-          {/* リード（スマホで読みやすいよう少し締める） */}
           <p
             className="mb-10 mx-auto max-w-[34rem] text-center text-[15px] sm:text-base leading-8 text-[#e6e4df] break-keep"
-            style={{
-              lineBreak: 'strict' as any,
-              textWrap: 'balance' as any,
-              hangingPunctuation: 'allow-end' as any,
-              letterSpacing: '0.005em',
-            }}
+            style={{ textWrap: 'balance' as any, lineBreak: 'strict' as any }}
           >
             {t('about_desc')}
           </p>
-
-          {/* 本文 */}
           <div className="space-y-5 text-[15px] md:text-base leading-8 max-w-3xl mx-auto text-left">
-            {t('about_desc_long')
-              .split(/\n{2,}/)
-              .map((p, i) => <p key={i}>{p.trim()}</p>)}
+            {t('about_desc_long').split(/\n{2,}/).map((p, i) => <p key={i}>{p.trim()}</p>)}
           </div>
         </section>
       </div>
@@ -340,17 +321,12 @@ export default function App() {
           <div className="w-14 h-0.5 mx-auto mb-8" style={{ background: gold }} />
 
           <div className="grid md:grid-cols-[1.15fr_1fr] gap-10 items-end">
-            {/* 本文 */}
             <div>
               <p className="text-sm opacity-80 mb-3" style={{ color: gold }}>{t('greeting_name')}</p>
               <div className="space-y-5 text-[15px] md:text-base leading-8">
-                {t('greeting_body_long')
-                  .split(/\n{2,}/)
-                  .map((p, i) => <p key={i}>{p.trim()}</p>)}
+                {t('greeting_body_long').split(/\n{2,}/).map((p, i) => <p key={i}>{p.trim()}</p>)}
               </div>
             </div>
-
-            {/* 写真：角丸なし＋アスペクト固定でレイアウト安定 */}
             <figure className="shadow-lg self-end" style={{ border: `1px solid ${borderGold}` }}>
               <img
                 src="/about-side.jpg?v=2"
@@ -382,14 +358,8 @@ export default function App() {
               ['svc5_title','svc5_desc'],
               ['svc6_title','svc6_desc'],
             ] as const).map(([ti, de]) => (
-              <article
-                key={ti}
-                className="rounded-xl p-6 border"
-                style={{ background: cardBg, borderColor: 'rgba(212,175,55,.18)' }}
-              >
-                <h3 className="font-serif text-xl mb-2" style={{ color: '#fff' }}>
-                  {t(ti as Keys)}
-                </h3>
+              <article key={ti} className="rounded-xl p-6 border" style={{ background: cardBg, borderColor: 'rgba(212,175,55,.18)' }}>
+                <h3 className="font-serif text-xl mb-2" style={{ color: '#fff' }}>{t(ti as Keys)}</h3>
                 <p className="text-sm leading-6 opacity-90">{t(de as Keys)}</p>
               </article>
             ))}
@@ -424,36 +394,26 @@ export default function App() {
 
           <form
             className="grid gap-4 md:grid-cols-2 max-w-3xl mx-auto"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert('Thanks! (temporary)');
-            }}
+            onSubmit={(e) => { e.preventDefault(); alert('Thanks! (temporary)'); }}
           >
             <div className="grid gap-2">
               <label className="text-sm opacity-90">{t('contact_name')}</label>
-              <input className="rounded-lg border px-3 py-3"
-                     style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} required />
+              <input className="rounded-lg border px-3 py-3" style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} required />
             </div>
             <div className="grid gap-2">
               <label className="text-sm opacity-90">{t('contact_email')}</label>
-              <input type="email" className="rounded-lg border px-3 py-3"
-                     style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} required />
+              <input type="email" className="rounded-lg border px-3 py-3" style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} required />
             </div>
             <div className="grid gap-2 md:col-span-2">
               <label className="text-sm opacity-90">{t('contact_phone')}</label>
-              <input className="rounded-lg border px-3 py-3"
-                     style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} />
+              <input className="rounded-lg border px-3 py-3" style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} />
             </div>
             <div className="grid gap-2 md:col-span-2">
               <label className="text-sm opacity-90">{t('contact_message')}</label>
-              <textarea rows={5} className="rounded-lg border px-3 py-3"
-                        style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} />
+              <textarea rows={5} className="rounded-lg border px-3 py-3" style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} />
             </div>
             <div className="md:col-span-2">
-              <button
-                className="rounded-xl px-5 py-3 font-semibold w-full md:w-auto"
-                style={{ background: gold, color: onyx }}
-              >
+              <button className="rounded-xl px-5 py-3 font-semibold w-full md:w-auto" style={{ background: gold, color: onyx }}>
                 {t('contact_send')}
               </button>
             </div>
