@@ -16,11 +16,11 @@ const en = {
   // Brand
   brand: 'Kokualoha',
 
-  // Hero（指定の英語コピー）
+  // Hero
   hero_title_line1: 'In Hawaii, meet a new you,',
   hero_title_line2: 'and rediscover Japan’s timeless beauty.',
 
-  // About
+  // About (short + long)
   about_title: 'ABOUT US',
   about_desc:
     'We provide reliable, locally rooted concierge support in Hawaii with a focus on “Made in Hawaii.”',
@@ -98,7 +98,7 @@ const ja: Record<Keys, string> = {
 
   brand: 'コクアロハ',
 
-  // Hero（指定の日本語コピー）
+  // Hero
   hero_title_line1: 'ハワイで出会う新しい自分、',
   hero_title_line2: '忘れていた日本の素晴らしさ。',
 
@@ -180,6 +180,7 @@ function useI18n(lang: Lang) {
 export default function App() {
   const [lang, setLang] = useState<Lang>('ja');
   const { t } = useI18n(lang);
+  const isJa = lang === 'ja';
 
   // fade-in on scroll
   const ioRef = useRef<IntersectionObserver | null>(null);
@@ -201,9 +202,6 @@ export default function App() {
   const graphite = '#141516';
   const cardBg = '#17181a';
   const borderGold = 'rgba(212,175,55,.28)';
-
-  // ヒーロー見出しの最大幅（言語別）— 画面幅 92% を上限に
-  const heroMax = lang === 'en' ? 'min(92vw, 42rem)' : 'min(92vw, 36rem)';
 
   return (
     <div className="min-h-screen">
@@ -251,10 +249,7 @@ export default function App() {
       </header>
 
       {/* ===== Hero ===== */}
-      <section
-        className="relative w-full overflow-hidden"
-        style={{ background: onyx, height: '100svh' }}  /* iOS 安全な 100vh */
-      >
+      <section className="relative hero-full w-full overflow-hidden" style={{ background: onyx }}>
         <img
           src="/hero.jpg"
           alt=""
@@ -263,20 +258,24 @@ export default function App() {
           fetchPriority="high"
         />
         {/* 黒フィルター＋上淡/下濃グラデ */}
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.75) 100%)' }}
-        />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.75) 100%)' }} />
         {/* 内容 */}
         <div className="relative z-10 h-full max-w-5xl mx-auto px-4 flex flex-col items-center justify-center text-center">
+          {/* “WELCOME TO” は非表示のまま */}
+          <p className="hidden uppercase tracking-[0.35em] text-xs md:text-sm mb-4" style={{ color: gold }}>WELCOME TO</p>
+
           <h1
-            className="hero-text-animation font-serif drop-shadow text-center px-2"
+            className="hero-text-animation font-serif drop-shadow text-center"
             style={{
               color: '#fff',
-              fontSize: 'clamp(22px, 7.2vw, 56px)',  // スマホで暴れない可変サイズ
-              lineHeight: 1.18,
-              maxWidth: heroMax,                     // 画面幅の 92% 以内
+              // 流体タイポ：端末幅に合わせてスムーズに可変
+              fontSize: isJa ? 'clamp(28px, 8vw, 56px)' : 'clamp(26px, 6.8vw, 52px)',
+              lineHeight: isJa ? 1.28 : 1.2,
+              maxWidth: 'min(92vw, 720px)',
               margin: '0 auto',
+              whiteSpace: 'normal',
+              // バランスよく改行（対応ブラウザのみ）
+              textWrap: 'balance' as any,
             }}
           >
             {t('hero_title_line1')}<br />{t('hero_title_line2')}
@@ -284,7 +283,7 @@ export default function App() {
 
           <a
             href="#service"
-            className="mt-8 md:mt-10 inline-block rounded-xl px-6 md:px-7 py-3 text-sm font-semibold transition"
+            className="mt-8 md:mt-10 inline-block rounded-xl px-7 py-3 text-sm font-semibold transition"
             style={{ background: gold, color: onyx, boxShadow: '0 6px 18px rgba(212,175,55,.25)' }}
           >
             {lang === 'ja' ? '詳しく見る' : 'LEARN MORE'}
@@ -295,43 +294,61 @@ export default function App() {
 
       {/* ===== About ===== */}
       <div className="w-full" style={{ background: charcoal }}>
-        <section id="about" className="mx-auto max-w-6xl px-4 py-20 fade-in-section">
-          <h2 className="font-serif text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
+        <section id="about" className="mx-auto max-w-6xl px-4 py-16 md:py-20 fade-in-section">
+          {/* 見出し・区切り線（中央） */}
+          <h2 className="font-serif text-[28px] sm:text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
             {t('about_title')}
           </h2>
-          <div className="w-14 h-0.5 mx-auto mb-6" style={{ background: gold }} />
+          <div className="w-12 sm:w-14 h-0.5 mx-auto mb-5 sm:mb-6" style={{ background: gold }} />
+
+          {/* リード文（日本語は禁則と字詰めを軽く） */}
           <p
-            className="mb-10 mx-auto max-w-[34rem] text-center text-[15px] sm:text-base leading-8 text-[#e6e4df] break-keep"
-            style={{ textWrap: 'balance' as any, lineBreak: 'strict' as any }}
+            className="mb-8 sm:mb-10 mx-auto max-w-[34rem] text-center text-[15px] sm:text-base leading-8 text-[#e6e4df]"
+            style={isJa ? ({ lineBreak: 'strict' as any, hangingPunctuation: 'allow-end' as any, letterSpacing: '0.005em' }) : {}}
           >
             {t('about_desc')}
           </p>
-          <div className="space-y-5 text-[15px] md:text-base leading-8 max-w-3xl mx-auto text-left">
-            {t('about_desc_long').split(/\n{2,}/).map((p, i) => <p key={i}>{p.trim()}</p>)}
+
+          {/* 本文 */}
+          <div
+            className="space-y-5 text-[15px] md:text-base leading-8 max-w-3xl mx-auto text-left"
+            style={isJa ? ({ lineBreak: 'strict' as any, hangingPunctuation: 'allow-end' as any, letterSpacing: '0.002em' }) : {}}
+          >
+            {t('about_desc_long')
+              .split(/\n{2,}/)
+              .map((p, i) => <p key={i}>{p.trim()}</p>)}
           </div>
         </section>
       </div>
 
       {/* ===== Founder Greeting ===== */}
       <div className="w-full" style={{ background: graphite }}>
-        <section id="greeting" className="mx-auto max-w-6xl px-4 py-20 fade-in-section">
-          <h2 className="font-serif text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
+        <section id="greeting" className="mx-auto max-w-6xl px-4 py-16 md:py-20 fade-in-section">
+          <h2 className="font-serif text-[28px] sm:text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
             {t('greeting_title')}
           </h2>
-          <div className="w-14 h-0.5 mx-auto mb-8" style={{ background: gold }} />
+          <div className="w-12 sm:w-14 h-0.5 mx-auto mb-6 sm:mb-8" style={{ background: gold }} />
 
-          <div className="grid md:grid-cols-[1.15fr_1fr] gap-10 items-end">
+          <div className="grid md:grid-cols-[1.15fr_1fr] gap-8 md:gap-10 items-end">
+            {/* 本文（左揃え） */}
             <div>
               <p className="text-sm opacity-80 mb-3" style={{ color: gold }}>{t('greeting_name')}</p>
-              <div className="space-y-5 text-[15px] md:text-base leading-8">
-                {t('greeting_body_long').split(/\n{2,}/).map((p, i) => <p key={i}>{p.trim()}</p>)}
+              <div
+                className="space-y-5 text-[15px] md:text-base leading-8"
+                style={isJa ? ({ lineBreak: 'strict' as any, hangingPunctuation: 'allow-end' as any, letterSpacing: '0.002em' }) : {}}
+              >
+                {t('greeting_body_long')
+                  .split(/\n{2,}/)
+                  .map((p, i) => <p key={i}>{p.trim()}</p>)}
               </div>
             </div>
+
+            {/* 写真（角丸なし・フチをゴールド系） */}
             <figure className="shadow-lg self-end" style={{ border: `1px solid ${borderGold}` }}>
               <img
                 src="/about-side.jpg?v=2"
                 alt=""
-                className="w-full h-auto object-cover aspect-[4/3]"
+                className="w-full h-full object-cover"
                 loading="lazy"
                 decoding="async"
               />
@@ -342,14 +359,14 @@ export default function App() {
 
       {/* ===== Service ===== */}
       <div className="w-full" style={{ background: charcoal }}>
-        <section id="service" className="mx-auto max-w-6xl px-4 py-20 fade-in-section">
-          <h2 className="font-serif text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
+        <section id="service" className="mx-auto max-w-6xl px-4 py-16 md:py-20 fade-in-section">
+          <h2 className="font-serif text-[28px] sm:text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
             {t('service_title')}
           </h2>
-          <div className="w-14 h-0.5 mx-auto mb-6" style={{ background: gold }} />
-          <p className="text-sm opacity-90 mb-8 text-center">{t('service_subtitle')}</p>
+          <div className="w-12 sm:w-14 h-0.5 mx-auto mb-5 sm:mb-6" style={{ background: gold }} />
+          <p className="text-sm opacity-90 mb-6 sm:mb-8 text-center">{t('service_subtitle')}</p>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
             {([
               ['svc1_title','svc1_desc'],
               ['svc2_title','svc2_desc'],
@@ -358,8 +375,14 @@ export default function App() {
               ['svc5_title','svc5_desc'],
               ['svc6_title','svc6_desc'],
             ] as const).map(([ti, de]) => (
-              <article key={ti} className="rounded-xl p-6 border" style={{ background: cardBg, borderColor: 'rgba(212,175,55,.18)' }}>
-                <h3 className="font-serif text-xl mb-2" style={{ color: '#fff' }}>{t(ti as Keys)}</h3>
+              <article
+                key={ti}
+                className="rounded-xl p-5 md:p-6 border"
+                style={{ background: cardBg, borderColor: 'rgba(212,175,55,.18)' }}
+              >
+                <h3 className="font-serif text-lg md:text-xl mb-2" style={{ color: '#fff' }}>
+                  {t(ti as Keys)}
+                </h3>
                 <p className="text-sm leading-6 opacity-90">{t(de as Keys)}</p>
               </article>
             ))}
@@ -371,13 +394,13 @@ export default function App() {
 
       {/* ===== Company ===== */}
       <div className="w-full" style={{ background: graphite }}>
-        <section id="company" className="mx-auto max-w-6xl px-4 py-20 fade-in-section">
-          <h2 className="font-serif text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
+        <section id="company" className="mx-auto max-w-6xl px-4 py-16 md:py-20 fade-in-section">
+          <h2 className="font-serif text-[28px] sm:text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
             {t('company_title')}
           </h2>
-          <div className="w-14 h-0.5 mx-auto mb-6" style={{ background: gold }} />
-          <div className="rounded-xl p-6 border max-w-3xl mx-auto" style={{ background: cardBg, borderColor: 'rgba(212,175,55,.18)' }}>
-            <p className="font-serif text-xl mb-2 text-center" style={{ color: '#fff' }}>{t('company_name')}</p>
+          <div className="w-12 sm:w-14 h-0.5 mx-auto mb-5 sm:mb-6" style={{ background: gold }} />
+          <div className="rounded-xl p-5 md:p-6 border max-w-3xl mx-auto" style={{ background: cardBg, borderColor: 'rgba(212,175,55,.18)' }}>
+            <p className="font-serif text-lg md:text-xl mb-2 text-center" style={{ color: '#fff' }}>{t('company_name')}</p>
             <p className="leading-7 opacity-90 text-left">{t('company_desc')}</p>
           </div>
         </section>
@@ -385,35 +408,45 @@ export default function App() {
 
       {/* ===== Contact ===== */}
       <div className="w-full" style={{ background: charcoal }}>
-        <section id="contact" className="mx-auto max-w-6xl px-4 py-20 fade-in-section">
-          <h2 className="font-serif text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
+        <section id="contact" className="mx-auto max-w-6xl px-4 py-16 md:py-20 fade-in-section">
+          <h2 className="font-serif text-[28px] sm:text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
             {t('contact_title')}
           </h2>
-          <div className="w-14 h-0.5 mx-auto mb-6" style={{ background: gold }} />
-          <p className="text-sm opacity-90 mb-8 text-center">{t('contact_subtitle')}</p>
+          <div className="w-12 sm:w-14 h-0.5 mx-auto mb-5 sm:mb-6" style={{ background: gold }} />
+          <p className="text-sm opacity-90 mb-6 sm:mb-8 text-center">{t('contact_subtitle')}</p>
 
           <form
             className="grid gap-4 md:grid-cols-2 max-w-3xl mx-auto"
-            onSubmit={(e) => { e.preventDefault(); alert('Thanks! (temporary)'); }}
+            onSubmit={(e) => {
+              e.preventDefault();
+              alert('Thanks! (temporary)');
+            }}
           >
             <div className="grid gap-2">
               <label className="text-sm opacity-90">{t('contact_name')}</label>
-              <input className="rounded-lg border px-3 py-3" style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} required />
+              <input className="rounded-lg border px-3 py-3"
+                     style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} required />
             </div>
             <div className="grid gap-2">
               <label className="text-sm opacity-90">{t('contact_email')}</label>
-              <input type="email" className="rounded-lg border px-3 py-3" style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} required />
+              <input type="email" className="rounded-lg border px-3 py-3"
+                     style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} required />
             </div>
             <div className="grid gap-2 md:col-span-2">
               <label className="text-sm opacity-90">{t('contact_phone')}</label>
-              <input className="rounded-lg border px-3 py-3" style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} />
+              <input className="rounded-lg border px-3 py-3"
+                     style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} />
             </div>
             <div className="grid gap-2 md:col-span-2">
               <label className="text-sm opacity-90">{t('contact_message')}</label>
-              <textarea rows={5} className="rounded-lg border px-3 py-3" style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} />
+              <textarea rows={5} className="rounded-lg border px-3 py-3"
+                        style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} />
             </div>
             <div className="md:col-span-2">
-              <button className="rounded-xl px-5 py-3 font-semibold w-full md:w-auto" style={{ background: gold, color: onyx }}>
+              <button
+                className="rounded-xl px-5 py-3 font-semibold w-full md:w-auto"
+                style={{ background: gold, color: onyx }}
+              >
                 {t('contact_send')}
               </button>
             </div>
