@@ -24,24 +24,26 @@ const en = {
   about_title: 'ABOUT US',
   about_desc:
     'We provide reliable, locally rooted concierge support in Hawaii with a focus on “Made in Hawaii.”',
-  about_desc_long: `There are unseen pitfalls to living abroad. In Hawaii too, the old notion that “you can trust someone just because they are Japanese” has faded, and people sometimes face unexpected problems.
+  about_desc_long: `There are unseen pitfalls to living abroad. In Hawaii as well, there was once a belief that “if it’s run by Japanese, you can trust it.” Sadly, that myth has faded, and people sometimes face unexpected problems.
 
-While Japanese-language services have increased, prices are often higher than local rates, and the sense of safety from “Japanese-owned, so it's fine” is slipping away. In the U.S., rigorous public review systems such as Yelp matter, yet businesses that serve only Japanese customers tend not to appear in those arenas.
+While Japanese-language services have increased, prices are often higher than local rates, and the old sense of security in “Japanese-managed” businesses has weakened. At the same time, platforms like Google and Yelp matter, yet businesses that serve only Japanese customers tend not to appear in those arenas.
 
-We face this reality and, together with local experts, guide guests with respect for what is authentically Made in Hawaii. Because we live here and welcome dear friends, we introduce not only Japanese-run businesses but also the true charms of Hawaii. Our aim is to move beyond a Japan-only bubble and coexist with the local community.
+We face this reality and, together with local experts, guide guests towards truly valuable experiences with an emphasis on genuine “Made in Hawaii.” We don’t want to introduce only Japanese-run shops, but also share Hawaii’s original, authentic charm. Our aim is to help people step beyond a Japan-only bubble and coexist with the local community.
 
-Even school choices can become insular—following where “someone’s child goes” narrows diversity. There are also cases where people rely on a Japanese acquaintance they happened to meet, only to encounter trouble due to insufficient knowledge or experience. Goodwill is not the same as expertise, and mistaking one for the other can have serious consequences.
+Even school choices can become insular—following where “someone’s friend is going,” which can lead to a loss of diversity. Some people rely on a casually met resident for help, only to encounter trouble due to insufficient knowledge or experience. Goodwill is not the same as expertise, and mistaking one for the other can have serious consequences.
 
-At Kokualoha, a team handles each case. If an issue arises, we find a way forward and take responsibility for our guests—valuing organizational reliability and accountability over individual goodwill.`,
+At Kokualoha, a team handles each case. If an issue arises, we find a way forward, take responsibility, and accompany our clients through to resolution. We value organizational reliability and accountability over individual goodwill.`,
 
   // Founder greeting
   greeting_title: 'Message from the Founder',
-  greeting_name: 'Taro Hawaii',
-  greeting_body_long: `I have lived in Hawaii for 30 years. I came here alone for university and, through an internship, entered the travel industry. After switching to a work visa and gaining experience, I became independent 20 years ago. I have challenged many areas—from tour buses and transfers to optional tours and vacation rentals—continuing even through the pandemic with the support of locals and guests.
+  greeting_name: 'Musashi International, Inc 代表取締役社長 塩田 武左史',
+  greeting_body_long: `I have lived in Hawaii for 30 years. I came here alone as a university student, and while working various part-time jobs, I eventually found my path in business: first the golf industry, then a years-long career in real estate, and now into the travel and concierge fields.
 
-I’m also involved with “Music Band,” the only activity in Hawaii that teaches music to children with disabilities. In recent years, I was entrusted by a Japanese investor to operate a long-standing karaoke venue—another new challenge.
+Throughout this time, my strongest desire has been to support the Japanese community. From the bubble era when Japanese investors poured into Hawaii, through the waves of economic change, I have seen both successes and difficulties. Yet I have continued to walk alongside our clients, from students and families to entrepreneurs and long-stay residents. We have carried on even through the pandemic with the support of locals and guests.
 
-One of our signature tours is the Pearl Harbor Historical Tour. We carefully pass on the history of the efforts and sacrifices of Japanese Americans, and share why Hawaii remains a special place for Japanese people. Delivering experiences that stay in the heart—beyond mere sightseeing—is our pride.`,
+I’m also involved with “Music Band,” the only activity in Hawaii that teaches music to children with disabilities. More recently, I’ve taken on a new challenge: entrusted by Japanese investors to operate a long-standing karaoke venue—another new challenge.
+
+One of our signature tours is the Pearl Harbor Historical Tour. We cherish the history of Japanese Americans and the sacrifices and efforts of those who came before us. We see it as our mission to share why Hawaii remains so beloved by Japanese, and to help guests truly feel that connection. Delivering experiences that stay in the heart—beyond mere sightseeing—is our pride.`,
 
   // Service
   service_title: 'SERVICE',
@@ -107,17 +109,21 @@ const ja: Record<Keys, string> = {
     'Made in Hawaii を大切に、現地に根差した信頼できるコンシェルジュサポートをご提供します。',
   about_desc_long: `海外生活には、見えない落とし穴が存在します。ここハワイでも、かつては「日本人だから安心できる」という信頼がありましたが、残念ながら今はその神話が崩れ、思わぬ被害に遭うケースが少なくありません。
 
-日本語でのサービスは増えましたが、料金はローカルより高く、「日本人が経営しているから大丈夫」という安心感も薄れつつあります。アメリカ社会では Yelp などの厳しい口コミ評価が重視される一方、日本人向けにのみ営業する事業者は、そうした公的な評価の場に現れにくいのが現状です。
+日本語でのサービスは増えましたが、料金はローカルより高く、「日本人が経営しているから大丈夫」という安心感も薄れつつあります。アメリカ社会では Google や Yelp などの口コミが厳しくチェックされますが、日本人だけを対象にした事業者は、そうした評価の場に出てこないことも多いのが現状です。
 
-私たちはこの現実を直視し、ローカルの専門家と共に、本当に価値のある “Made in Hawaii” を大切にしたご案内を行っています。ここに暮らし、友人を迎える立場だからこそ、日本人経営のお店だけでなく、ハワイ本来の魅力をご紹介したい。目的は「日本人だけの世界からの脱却」と「現地社会との共生」です。
+私たちはこの現実を直視し、ローカルの専門家と共に、本当に価値のある “Made in Hawaii” を大切にしたご案内を行っています。日本人経営のお店だけでなく、ハワイ本来の魅力を感じていただける場所をご紹介し、「日本人だけの世界」から一歩外に踏み出すお手伝いをしたいと考えています。
 
-学校選びひとつでも「○○ちゃんが行くから」と同質化が進み、多様性を失う例があります。たまたま知り合った在住日本人に頼み、知識や経験不足からトラブルになるケースも少なくありません。人の善意と専門性は別物であり、見誤ると深刻な結果につながり得ます。
+学校選びひとつでも「○○ちゃんが行くから」と同じ選択に偏り、多様性が失われることがあります。たまたま知り合った在住日本人に頼み、知識や経験不足からトラブルになるケースも少なくありません。人の善意と専門性は別物であり、見誤ると深刻な結果につながり得ます。
 
 コクアロハでは、一つの案件をチームで遂行します。問題があれば必ず打開策を見つけ、責任をもってご案内します。個人の善意に頼るのではなく、組織としての信頼と責任を重視します。`,
 
   greeting_title: '代表挨拶',
-  greeting_name: 'ハワイ太郎',
-  greeting_body_long: `私はハワイに暮らして30年になります。留学を目的に単身でハワイの大学へ入学し、学生時代の研修をきっかけに旅行業界に入りました。その後、就労ビザに切り替えて経験を積み、20年前に独立。ツアーバスや送迎車両、オプショナルツアー、民泊事業など、多方面に挑戦しながら今日まで歩んでまいりました。パンデミックという大きな試練もありましたが、地元の方々やお客様に支えられ、事業を続けることができました。
+  greeting_name: 'Musashi International, Inc 代表取締役社長 塩田 武左史',
+  greeting_body_long: `私はハワイに暮らして30年になります。留学を目的に単身でハワイの大学へ入学し、学生生活を送りながら様々な仕事に携わってきました。ゴルフ業界、不動産業界を経て、現在は旅行・コンシェルジュ業へとフィールドを広げております。
+
+これまで一貫して大切にしてきたのは、「日本人の方々の力になりたい」という思いです。バブル期の投資ブームから、経済の変動、パンデミックを含む幾度もの転換期を見てきました。その中で、留学生やご家族、長期滞在者や投資家の方々など、さまざまなお客様と関わり、一緒に課題を乗り越えてきました。
+
+ハワイでの暮らしは、決してきれいな部分だけではありません。トラブルや不安、言葉の壁、文化の違いなど、想像もしなかった出来事に直面することもあります。そのような時にこそ、「現地で本当に頼れる存在」が必要だと感じています。私たちは、単に利便性を提供するだけでなく、お客様の背景や想いを理解したうえで、最適な選択肢をご提案することを心がけています。
 
 また、個人的にはハワイで唯一、障害をもつ子どもたちに音楽を教える「Music Band 」の活動にも携わっております。さらに近年は、日本の投資家から老舗カラオケ店の運営を託され、新たな挑戦も始めました。
 
@@ -183,6 +189,7 @@ export default function App() {
   const isJa = lang === 'ja';
 
   // fade-in on scroll
+<|diff_marker|> ADD A1000
   const ioRef = useRef<IntersectionObserver | null>(null);
   useEffect(() => {
     const els = document.querySelectorAll<HTMLElement>('.fade-in-section');
@@ -195,10 +202,10 @@ export default function App() {
     return () => ioRef.current?.disconnect();
   }, []);
 
-  // theme
-  const gold = '#D4AF37';
-  const onyx = '#0B0B0C';
-  const charcoal = '#101112';
+  // constants (colors)
+  const gold = '#d4af37';
+  const onyx = '#050607';
+  const charcoal = '#0c0d0e';
   const graphite = '#141516';
   const cardBg = '#17181a';
   const borderGold = 'rgba(212,175,55,.28)';
@@ -215,6 +222,7 @@ export default function App() {
 
           <nav className="hidden md:flex gap-6 text-sm">
             <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#service">{t('nav_service')}</a>
+<|diff_marker|> ADD A1020
             <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#about">{t('nav_about')}</a>
             <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#greeting">{t('nav_greeting')}</a>
             <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#company">{t('nav_company')}</a>
@@ -235,6 +243,7 @@ export default function App() {
             </button>
             <button
               className="px-3 py-1 rounded text-sm border"
+<|diff_marker|> ADD A1040
               style={{
                 borderColor: lang === 'en' ? gold : 'rgba(212,175,55,.35)',
                 color: lang === 'en' ? '#0b0b0c' : '#e6e4df',
@@ -255,19 +264,28 @@ export default function App() {
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
           loading="eager"
+<|diff_marker|> ADD A1060
           fetchPriority="high"
         />
         {/* 黒フィルター＋上淡/下濃グラデ */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.75) 100%)' }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.75) 100%)',
+          }}
+        />
         {/* 内容 */}
         <div className="relative z-10 h-full max-w-5xl mx-auto px-4 flex flex-col items-center justify-center text-center">
           {/* “WELCOME TO” は非表示のまま */}
-          <p className="hidden uppercase tracking-[0.35em] text-xs md:text-sm mb-4" style={{ color: gold }}>WELCOME TO</p>
+          <p className="hidden uppercase tracking-[0.35em] text-xs md:text-sm mb-4" style={{ color: gold }}>
+            WELCOME TO
+          </p>
 
           <h1
             className="hero-text-animation font-serif drop-shadow text-center"
             style={{
               color: '#fff',
+<|diff_marker|> ADD A1080
               // 流体タイポ：端末幅に合わせてスムーズに可変
               fontSize: isJa ? 'clamp(28px, 8vw, 56px)' : 'clamp(26px, 6.8vw, 52px)',
               lineHeight: isJa ? 1.28 : 1.2,
@@ -278,7 +296,22 @@ export default function App() {
               textWrap: 'balance' as any,
             }}
           >
-            {t('hero_title_line1')}<br />{t('hero_title_line2')}
+            {isJa ? (
+              <>
+                <span>ハワイで出会う</span>
+                <br />
+                <span>新しい自分、</span>
+                <br />
+                <span>忘れていた日本の素晴らしさ。</span>
+              </>
+            ) : (
+              <>
+<|diff_marker|> ADD A1100
+                {t('hero_title_line1')}
+                <br />
+                {t('hero_title_line2')}
+              </>
+            )}
           </h1>
 
           <a
@@ -294,29 +327,83 @@ export default function App() {
 
       {/* ===== About ===== */}
       <div className="w-full" style={{ background: charcoal }}>
+<|diff_marker|> ADD A1120
         <section id="about" className="mx-auto max-w-6xl px-4 py-16 md:py-20 fade-in-section">
           {/* 見出し・区切り線（中央） */}
           <h2 className="font-serif text-[28px] sm:text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
             {t('about_title')}
           </h2>
-          <div className="w-12 sm:w-14 h-0.5 mx-auto mb-5 sm:mb-6" style={{ background: gold }} />
+          <div className="w-12 sm:w-14 h-0.5 mx-auto mb-6 sm:mb-8" style={{ background: gold }} />
 
-          {/* リード文（日本語は禁則と字詰めを軽く） */}
-          <p
-            className="mb-8 sm:mb-10 mx-auto max-w-[34rem] text-center text-[15px] sm:text-base leading-8 text-[#e6e4df]"
-            style={isJa ? ({ lineBreak: 'strict' as any, hangingPunctuation: 'allow-end' as any, letterSpacing: '0.005em' }) : {}}
-          >
-            {t('about_desc')}
-          </p>
+          {/* 2カラム：左テキスト / 右ポイント */}
+          <div className="grid md:grid-cols-[1.4fr_1.1fr] gap-10 md:gap-12 items-start">
+            {/* 左：長文 */}
+            <div>
+              <p className="text-sm md:text-base leading-relaxed mb-4 opacity-90" style={{ color: '#e6e4df' }}>
+                {t('about_desc')}
+              </p>
+              <div
+                className="text-[15px] md:text-base leading-8 opacity-90 space-y-4"
+                style={
+                  isJa
+                    ? ({
+                        lineBreak: 'strict' as any,
+<|diff_marker|> ADD A1140
+                        hangingPunctuation: 'allow-end' as any,
+                        letterSpacing: '0.002em',
+                      } as any)
+                    : {}
+                }
+              >
+                {t('about_desc_long')
+                  .split(/\n{2,}/)
+                  .map((p, i) => (
+                    <p key={i}>{p.trim()}</p>
+                  ))}
+              </div>
+            </div>
 
-          {/* 本文 */}
-          <div
-            className="space-y-5 text-[15px] md:text-base leading-8 max-w-3xl mx-auto text-left"
-            style={isJa ? ({ lineBreak: 'strict' as any, hangingPunctuation: 'allow-end' as any, letterSpacing: '0.002em' }) : {}}
-          >
-            {t('about_desc_long')
-              .split(/\n{2,}/)
-              .map((p, i) => <p key={i}>{p.trim()}</p>)}
+            {/* 右：ポイントカード */}
+            <div className="space-y-4">
+              <div
+                className="rounded-xl border p-5"
+                style={{ background: cardBg, borderColor: borderGold, color: '#e6e4df' }}
+              >
+<|diff_marker|> ADD A1160
+                <h3 className="font-serif text-lg mb-3" style={{ color: '#fff' }}>
+                  {lang === 'ja' ? '私たちが大切にしていること' : 'What We Value'}
+                </h3>
+                <ul className="space-y-2 text-sm leading-relaxed">
+                  <li>・ローカルの専門家と連携した、実務に強いサポート</li>
+                  <li>・「日本人だけの世界」に閉じない、本当のハワイとの出会い</li>
+                  <li>・お客様の背景に寄り添う、オーダーメイドのご提案</li>
+                  <li>・個人ではなく「組織」としての継続性と責任</li>
+                </ul>
+              </div>
+
+              <div
+                className="rounded-xl border p-5 text-sm leading-relaxed opacity-90"
+                style={{ background: 'rgba(4,7,10,.8)', borderColor: 'rgba(212,175,55,.18)', color: '#e0dfd8' }}
+              >
+                {lang === 'ja' ? (
+                  <>
+                    <p className="mb-2">
+                      ハワイでの生活・留学・投資・長期滞在など、「少し相談してみたい」という段階からお気軽にご連絡ください。
+                    </p>
+<|diff_marker|> ADD A1180
+                    <p>小さなお困りごとの相談窓口としても、ご利用いただけます。</p>
+                  </>
+                ) : (
+                  <>
+                    <p className="mb-2">
+                      Whether you are considering study, investment, long stays, or a first visit to Hawaii, we are here
+                      from the “just exploring” stage.
+                    </p>
+                    <p>Think of us as your local, bilingual help desk in Hawaii.</p>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
         </section>
       </div>
@@ -324,35 +411,35 @@ export default function App() {
       {/* ===== Founder Greeting ===== */}
       <div className="w-full" style={{ background: graphite }}>
         <section id="greeting" className="mx-auto max-w-6xl px-4 py-16 md:py-20 fade-in-section">
+<|diff_marker|> ADD A1200
           <h2 className="font-serif text-[28px] sm:text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
             {t('greeting_title')}
           </h2>
           <div className="w-12 sm:w-14 h-0.5 mx-auto mb-6 sm:mb-8" style={{ background: gold }} />
 
-          <div className="grid md:grid-cols-[1.15fr_1fr] gap-8 md:gap-10 items-end">
-            {/* 本文（左揃え） */}
-            <div>
-              <p className="text-sm opacity-80 mb-3" style={{ color: gold }}>{t('greeting_name')}</p>
-              <div
-                className="space-y-5 text-[15px] md:text-base leading-8"
-                style={isJa ? ({ lineBreak: 'strict' as any, hangingPunctuation: 'allow-end' as any, letterSpacing: '0.002em' }) : {}}
-              >
-                {t('greeting_body_long')
-                  .split(/\n{2,}/)
-                  .map((p, i) => <p key={i}>{p.trim()}</p>)}
-              </div>
+          <div className="max-w-3xl mx-auto">
+            <p className="text-sm opacity-80 mb-3 text-center" style={{ color: gold }}>
+              {t('greeting_name')}
+            </p>
+            <div
+              className="space-y-5 text-[15px] md:text-base leading-8"
+              style={
+                isJa
+                  ? ({
+                      lineBreak: 'strict' as any,
+                      hangingPunctuation: 'allow-end' as any,
+                      letterSpacing: '0.002em',
+                    } as any)
+                  : {}
+              }
+<|diff_marker|> ADD A1220
+            >
+              {t('greeting_body_long')
+                .split(/\n{2,}/)
+                .map((p, i) => (
+                  <p key={i}>{p.trim()}</p>
+                ))}
             </div>
-
-            {/* 写真（角丸なし・フチをゴールド系） */}
-            <figure className="shadow-lg self-end" style={{ border: `1px solid ${borderGold}` }}>
-              <img
-                src="/about-side.jpg?v=2"
-                alt=""
-                className="w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
           </div>
         </section>
       </div>
@@ -366,15 +453,16 @@ export default function App() {
           <div className="w-12 sm:w-14 h-0.5 mx-auto mb-5 sm:mb-6" style={{ background: gold }} />
           <p className="text-sm opacity-90 mb-6 sm:mb-8 text-center">{t('service_subtitle')}</p>
 
+<|diff_marker|> ADD A1240
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
-            {([
-              ['svc1_title','svc1_desc'],
-              ['svc2_title','svc2_desc'],
-              ['svc3_title','svc3_desc'],
-              ['svc4_title','svc4_desc'],
-              ['svc5_title','svc5_desc'],
-              ['svc6_title','svc6_desc'],
-            ] as const).map(([ti, de]) => (
+            {[
+              ['svc1_title', 'svc1_desc'],
+              ['svc2_title', 'svc2_desc'],
+              ['svc3_title', 'svc3_desc'],
+              ['svc4_title', 'svc4_desc'],
+              ['svc5_title', 'svc5_desc'],
+              ['svc6_title', 'svc6_desc'],
+            ].map(([ti, de]) => (
               <article
                 key={ti}
                 className="rounded-xl p-5 md:p-6 border"
@@ -386,6 +474,7 @@ export default function App() {
                 <p className="text-sm leading-6 opacity-90">{t(de as Keys)}</p>
               </article>
             ))}
+<|diff_marker|> ADD A1260
           </div>
 
           <p className="text-sm opacity-90 mt-6 text-center">{t('service_note_more')}</p>
@@ -399,9 +488,15 @@ export default function App() {
             {t('company_title')}
           </h2>
           <div className="w-12 sm:w-14 h-0.5 mx-auto mb-5 sm:mb-6" style={{ background: gold }} />
-          <div className="rounded-xl p-5 md:p-6 border max-w-3xl mx-auto" style={{ background: cardBg, borderColor: 'rgba(212,175,55,.18)' }}>
-            <p className="font-serif text-lg md:text-xl mb-2 text-center" style={{ color: '#fff' }}>{t('company_name')}</p>
-            <p className="leading-7 opacity-90 text-left">{t('company_desc')}</p>
+          <div
+            className="rounded-xl p-5 md:p-6 border max-w-3xl mx-auto"
+            style={{ background: cardBg, borderColor: 'rgba(212,175,55,.18)' }}
+          >
+            <p className="font-serif text-lg md:text-xl mb-2 text-center" style={{ color: '#fff' }}>
+              {t('company_name')}
+            </p>
+<|diff_marker|> ADD A1280
+            <p className="leading-7 opacity-90 text-center">{t('company_desc')}</p>
           </div>
         </section>
       </div>
@@ -412,8 +507,8 @@ export default function App() {
           <h2 className="font-serif text-[28px] sm:text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
             {t('contact_title')}
           </h2>
-          <div className="w-12 sm:w-14 h-0.5 mx-auto mb-5 sm:mb-6" style={{ background: gold }} />
-          <p className="text-sm opacity-90 mb-6 sm:mb-8 text-center">{t('contact_subtitle')}</p>
+          <div className="w-12 sm:w-14 h-0.5 mx-auto mb-6 sm:mb-8" style={{ background: gold }} />
+          <p className="text-sm opacity-90 mb-8 text-center">{t('contact_subtitle')}</p>
 
           <form
             className="grid gap-4 md:grid-cols-2 max-w-3xl mx-auto"
@@ -421,33 +516,49 @@ export default function App() {
               e.preventDefault();
               alert('Thanks! (temporary)');
             }}
+<|diff_marker|> ADD A1300
           >
             <div className="grid gap-2">
               <label className="text-sm opacity-90">{t('contact_name')}</label>
-              <input className="rounded-lg border px-3 py-3"
-                     style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} required />
+              <input
+                className="rounded-lg border px-3 py-3"
+                style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }}
+                required
+              />
             </div>
             <div className="grid gap-2">
               <label className="text-sm opacity-90">{t('contact_email')}</label>
-              <input type="email" className="rounded-lg border px-3 py-3"
-                     style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} required />
+              <input
+                type="email"
+                className="rounded-lg border px-3 py-3"
+                style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }}
+                required
+              />
             </div>
             <div className="grid gap-2 md:col-span-2">
               <label className="text-sm opacity-90">{t('contact_phone')}</label>
-              <input className="rounded-lg border px-3 py-3"
-                     style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} />
+<|diff_marker|> ADD A1320
+              <input
+                className="rounded-lg border px-3 py-3"
+                style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }}
+              />
             </div>
             <div className="grid gap-2 md:col-span-2">
               <label className="text-sm opacity-90">{t('contact_message')}</label>
-              <textarea rows={5} className="rounded-lg border px-3 py-3"
-                        style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }} />
+              <textarea
+                className="rounded-lg border px-3 py-3 min-h-[120px]"
+                style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }}
+                required
+              />
             </div>
-            <div className="md:col-span-2">
+            <div className="md:col-span-2 flex justify-center mt-2">
               <button
-                className="rounded-xl px-5 py-3 font-semibold w-full md:w-auto"
-                style={{ background: gold, color: onyx }}
+                type="submit"
+                className="px-8 py-3 rounded-xl text-sm font-semibold"
+                style={{ background: gold, color: onyx, boxShadow: '0 6px 18px rgba(212,175,55,.25)' }}
               >
                 {t('contact_send')}
+<|diff_marker|> ADD A1340
               </button>
             </div>
           </form>
@@ -455,12 +566,19 @@ export default function App() {
       </div>
 
       {/* ===== Footer ===== */}
-      <footer className="border-t" style={{ background: onyx, borderColor: 'rgba(212,175,55,.15)' }}>
-        <div className="mx-auto max-w-6xl px-4 py-8 text-sm flex flex-col md:flex-row items-center justify-between gap-3">
-          <div style={{ color: gold }}>{t('footer_copyright')}</div>
-          <div className="opacity-80" style={{ color: '#e6e4df' }}>{t('footer_rights')}</div>
+      <footer className="border-t" style={{ borderColor: 'rgba(212,175,55,.25)', background: '#050607' }}>
+        <div className="mx-auto max-w-6xl px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="text-xs opacity-70" style={{ color: '#b8b7b0' }}>
+            {t('footer_copyright')} &nbsp; {t('footer_rights')}
+          </div>
+          <div className="text-xs opacity-80" style={{ color: '#b8b7b0' }}>
+            {lang === 'ja'
+              ? '※ 本サイトはコンセプト紹介用のデモページです。'
+              : 'Demo page for concept and branding only.'}
+          </div>
         </div>
       </footer>
     </div>
+<|diff_marker|> ADD A1360
   );
 }
