@@ -36,7 +36,7 @@ At Kokualoha, a team handles each case. If an issue arises, we find a way forwar
 
   // Founder greeting
   greeting_title: 'Message from the Founder',
-  greeting_name: 'Musashi International, Inc 代表取締役社長 塩田 武左史',
+  greeting_name: 'Musashi International, Inc\n代表取締役社長　塩田 武左史',
   greeting_body_long: `I have lived in Hawaii for 30 years. I came here alone as a university student, and while working various part-time jobs, I eventually found my path in business: first the golf industry, then a years-long career in real estate, and now into the travel and concierge fields.
 
 Throughout this time, my strongest desire has been to support the Japanese community. From the bubble era when Japanese investors poured into Hawaii, through the waves of economic change, I have seen both successes and difficulties. Yet I have continued to walk alongside our clients, from students and families to entrepreneurs and long-stay residents. We have carried on even through the pandemic with the support of locals and guests.
