@@ -189,7 +189,6 @@ export default function App() {
   const isJa = lang === 'ja';
 
   // fade-in on scroll
-<|diff_marker|> ADD A1000
   const ioRef = useRef<IntersectionObserver | null>(null);
   useEffect(() => {
     const els = document.querySelectorAll<HTMLElement>('.fade-in-section');
