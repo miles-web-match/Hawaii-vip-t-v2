@@ -303,21 +303,22 @@ export default function App() {
               textWrap: 'balance' as any,
             }}
           >
-            {isJa ? (
-              <>
-                <span>ハワイで出会う</span>
-                <br />
-                <span>新しい自分、</span>
-                <br />
-                <span>忘れていた日本の素晴らしさ。</span>
-              </>
-            ) : (
-              <>
-                {t('hero_title_line1')}
-                <br />
-                {t('hero_title_line2')}
-              </>
-            )}
+         {isJa ? (
+  <>
+    <span>ハワイで出会う</span>
+    <br />
+    <span>新しい自分、</span>
+    <br />
+    <span style={{ whiteSpace: 'nowrap' }}>忘れていた日本の素晴らしさ。</span>
+  </>
+) : (
+  <>
+    {t('hero_title_line1')}
+    <br />
+    {t('hero_title_line2')}
+  </>
+)}
+
           </h1>
 
           <a
