@@ -217,14 +217,26 @@ export default function App() {
         style={{ background: 'rgba(0,0,0,.6)', backdropFilter: 'blur(6px)', borderColor: 'rgba(212,175,55,.15)' }}
       >
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-          <div className="font-serif text-xl" style={{ color: gold }}>{t('brand')}</div>
+          <div className="font-serif text-xl" style={{ color: gold }}>
+            {t('brand')}
+          </div>
 
           <nav className="hidden md:flex gap-6 text-sm">
-            <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#service">{t('nav_service')}</a>
-            <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#about">{t('nav_about')}</a>
-            <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#greeting">{t('nav_greeting')}</a>
-            <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#company">{t('nav_company')}</a>
-            <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#contact">{t('nav_contact')}</a>
+            <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#service">
+              {t('nav_service')}
+            </a>
+            <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#about">
+              {t('nav_about')}
+            </a>
+            <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#greeting">
+              {t('nav_greeting')}
+            </a>
+            <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#company">
+              {t('nav_company')}
+            </a>
+            <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#contact">
+              {t('nav_contact')}
+            </a>
           </nav>
 
           <div className="flex items-center gap-2">
@@ -241,7 +253,6 @@ export default function App() {
             </button>
             <button
               className="px-3 py-1 rounded text-sm border"
-<|diff_marker|> ADD A1040
               style={{
                 borderColor: lang === 'en' ? gold : 'rgba(212,175,55,.35)',
                 color: lang === 'en' ? '#0b0b0c' : '#e6e4df',
@@ -262,7 +273,6 @@ export default function App() {
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
           loading="eager"
-<|diff_marker|> ADD A1060
           fetchPriority="high"
         />
         {/* 黒フィルター＋上淡/下濃グラデ */}
@@ -283,7 +293,6 @@ export default function App() {
             className="hero-text-animation font-serif drop-shadow text-center"
             style={{
               color: '#fff',
-<|diff_marker|> ADD A1080
               // 流体タイポ：端末幅に合わせてスムーズに可変
               fontSize: isJa ? 'clamp(28px, 8vw, 56px)' : 'clamp(26px, 6.8vw, 52px)',
               lineHeight: isJa ? 1.28 : 1.2,
@@ -304,7 +313,6 @@ export default function App() {
               </>
             ) : (
               <>
-<|diff_marker|> ADD A1100
                 {t('hero_title_line1')}
                 <br />
                 {t('hero_title_line2')}
@@ -325,7 +333,6 @@ export default function App() {
 
       {/* ===== About ===== */}
       <div className="w-full" style={{ background: charcoal }}>
-<|diff_marker|> ADD A1120
         <section id="about" className="mx-auto max-w-6xl px-4 py-16 md:py-20 fade-in-section">
           {/* 見出し・区切り線（中央） */}
           <h2 className="font-serif text-[28px] sm:text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
@@ -346,7 +353,6 @@ export default function App() {
                   isJa
                     ? ({
                         lineBreak: 'strict' as any,
-<|diff_marker|> ADD A1140
                         hangingPunctuation: 'allow-end' as any,
                         letterSpacing: '0.002em',
                       } as any)
@@ -367,7 +373,6 @@ export default function App() {
                 className="rounded-xl border p-5"
                 style={{ background: cardBg, borderColor: borderGold, color: '#e6e4df' }}
               >
-<|diff_marker|> ADD A1160
                 <h3 className="font-serif text-lg mb-3" style={{ color: '#fff' }}>
                   {lang === 'ja' ? '私たちが大切にしていること' : 'What We Value'}
                 </h3>
@@ -388,7 +393,6 @@ export default function App() {
                     <p className="mb-2">
                       ハワイでの生活・留学・投資・長期滞在など、「少し相談してみたい」という段階からお気軽にご連絡ください。
                     </p>
-<|diff_marker|> ADD A1180
                     <p>小さなお困りごとの相談窓口としても、ご利用いただけます。</p>
                   </>
                 ) : (
@@ -409,7 +413,6 @@ export default function App() {
       {/* ===== Founder Greeting ===== */}
       <div className="w-full" style={{ background: graphite }}>
         <section id="greeting" className="mx-auto max-w-6xl px-4 py-16 md:py-20 fade-in-section">
-<|diff_marker|> ADD A1200
           <h2 className="font-serif text-[28px] sm:text-3xl md:text-4xl mb-2 text-center" style={{ color: '#fff' }}>
             {t('greeting_title')}
           </h2>
@@ -430,7 +433,6 @@ export default function App() {
                     } as any)
                   : {}
               }
-<|diff_marker|> ADD A1220
             >
               {t('greeting_body_long')
                 .split(/\n{2,}/)
@@ -451,7 +453,6 @@ export default function App() {
           <div className="w-12 sm:w-14 h-0.5 mx-auto mb-5 sm:mb-6" style={{ background: gold }} />
           <p className="text-sm opacity-90 mb-6 sm:mb-8 text-center">{t('service_subtitle')}</p>
 
-<|diff_marker|> ADD A1240
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
             {[
               ['svc1_title', 'svc1_desc'],
@@ -472,7 +473,6 @@ export default function App() {
                 <p className="text-sm leading-6 opacity-90">{t(de as Keys)}</p>
               </article>
             ))}
-<|diff_marker|> ADD A1260
           </div>
 
           <p className="text-sm opacity-90 mt-6 text-center">{t('service_note_more')}</p>
@@ -493,7 +493,6 @@ export default function App() {
             <p className="font-serif text-lg md:text-xl mb-2 text-center" style={{ color: '#fff' }}>
               {t('company_name')}
             </p>
-<|diff_marker|> ADD A1280
             <p className="leading-7 opacity-90 text-center">{t('company_desc')}</p>
           </div>
         </section>
@@ -514,7 +513,6 @@ export default function App() {
               e.preventDefault();
               alert('Thanks! (temporary)');
             }}
-<|diff_marker|> ADD A1300
           >
             <div className="grid gap-2">
               <label className="text-sm opacity-90">{t('contact_name')}</label>
@@ -535,7 +533,6 @@ export default function App() {
             </div>
             <div className="grid gap-2 md:col-span-2">
               <label className="text-sm opacity-90">{t('contact_phone')}</label>
-<|diff_marker|> ADD A1320
               <input
                 className="rounded-lg border px-3 py-3"
                 style={{ background: '#0f1011', borderColor: 'rgba(212,175,55,.22)' }}
@@ -556,7 +553,6 @@ export default function App() {
                 style={{ background: gold, color: onyx, boxShadow: '0 6px 18px rgba(212,175,55,.25)' }}
               >
                 {t('contact_send')}
-<|diff_marker|> ADD A1340
               </button>
             </div>
           </form>
@@ -577,6 +573,5 @@ export default function App() {
         </div>
       </footer>
     </div>
-<|diff_marker|> ADD A1360
   );
 }
