@@ -221,7 +221,6 @@ export default function App() {
 
           <nav className="hidden md:flex gap-6 text-sm">
             <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#service">{t('nav_service')}</a>
-<|diff_marker|> ADD A1020
             <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#about">{t('nav_about')}</a>
             <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#greeting">{t('nav_greeting')}</a>
             <a className="hover:opacity-90 transition" style={{ color: '#e6e4df' }} href="#company">{t('nav_company')}</a>
