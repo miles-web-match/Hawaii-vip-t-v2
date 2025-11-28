@@ -420,8 +420,11 @@ export default function App() {
           <div className="w-12 sm:w-14 h-0.5 mx-auto mb-6 sm:mb-8" style={{ background: gold }} />
 
           <div className="max-w-3xl mx-auto">
-            <p className="text-sm opacity-80 mb-3 text-center" style={{ color: gold }}>
-              {t('greeting_name')}
+  <p
+    className="text-sm opacity-80 mb-3 text-center"
+    style={{ color: gold, whiteSpace: 'pre-wrap' }}
+  >
+    {t('greeting_name')}
             </p>
             <div
               className="space-y-5 text-[15px] md:text-base leading-8"
